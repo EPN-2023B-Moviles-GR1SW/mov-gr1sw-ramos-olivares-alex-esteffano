@@ -1,0 +1,2 @@
+3,Ibuprofeno,400mg,Cada 8 horas
+4,Paracetamol,2,8
