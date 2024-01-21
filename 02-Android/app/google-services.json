@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "818323418196",
+    "project_id": "b2023-gr1sw-vaes",
+    "storage_bucket": "b2023-gr1sw-vaes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818323418196:android:80ca6910c5247da6a991c1",
+        "android_client_info": {
+          "package_name": "com.example.b2023_gr1sw_vaes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrvw1VKqOv8nJtXjJ1MLdcw3kVKNNyZ_8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
