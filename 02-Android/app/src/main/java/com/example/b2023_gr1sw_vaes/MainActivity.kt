@@ -125,9 +125,9 @@ class MainActivity : AppCompatActivity() {
     ){
         val intentExplicito = Intent(this, clase)
         // Enviar parametros (solamente variables primitivas)
-        intentExplicito.putExtra("nombre", "Adrian")
-        intentExplicito.putExtra("apellido", "Eguez")
-        intentExplicito.putExtra("apellido2", "Eguez2")
+        intentExplicito.putExtra("nombre", "Alex")
+        intentExplicito.putExtra("apellido", "Ramos")
+        intentExplicito.putExtra("apellido2", "Ramos2")
         intentExplicito.putExtra("edad", 34)
 
         callbackContenidoIntentExplicito.launch(intentExplicito)
