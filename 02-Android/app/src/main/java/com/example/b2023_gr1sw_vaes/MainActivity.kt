@@ -104,6 +104,20 @@ class MainActivity : AppCompatActivity() {
                 irActividad(ECrudEntrenador::class.java)
             }
 
+        val botonRView = findViewById<Button>(R.id.btn_revcycler_view)
+        botonRView
+            .setOnClickListener {
+                irActividad(FRecyclerView::class.java)
+            }
+
+
+
+        val botonGoogleMaps = findViewById<Button>(R.id.btn_google_maps)
+        botonGoogleMaps
+            .setOnClickListener {
+                irActividad(GGoogleMapsActivity::class.java)
+            }
+
 
     } // Termina onCreate
     fun abrirActividadConParametros(
@@ -111,9 +125,9 @@ class MainActivity : AppCompatActivity() {
     ){
         val intentExplicito = Intent(this, clase)
         // Enviar parametros (solamente variables primitivas)
-        intentExplicito.putExtra("nombre", "Alex")
-        intentExplicito.putExtra("apellido", "Ramos")
-        intentExplicito.putExtra("apellido2", "Ramos2")
+        intentExplicito.putExtra("nombre", "Adrian")
+        intentExplicito.putExtra("apellido", "Eguez")
+        intentExplicito.putExtra("apellido2", "Eguez2")
         intentExplicito.putExtra("edad", 34)
 
         callbackContenidoIntentExplicito.launch(intentExplicito)
