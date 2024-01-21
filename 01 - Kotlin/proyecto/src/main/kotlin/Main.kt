@@ -1,7 +1,7 @@
 import java.util.*
 
 fun main() {
-    println("Hola mundo");
+    println("Hola camaradas");
     // Tipos de variables
     // INMUTABLES (NO se reasignan "=")
     val inmutable: String = "Alex";
