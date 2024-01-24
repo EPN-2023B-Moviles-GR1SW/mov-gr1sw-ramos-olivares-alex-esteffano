@@ -1,4 +1,5 @@
 package com.example.b2023_gr1sw_vaes
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
@@ -59,6 +60,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -117,6 +119,10 @@ class MainActivity : AppCompatActivity() {
             .setOnClickListener {
                 irActividad(GGoogleMapsActivity::class.java)
             }
+
+        val botonFirebaseUI=findViewById<Button>(
+            R.id.btn_intent_firebase_ui
+        )
 
 
     } // Termina onCreate
