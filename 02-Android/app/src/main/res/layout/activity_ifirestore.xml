@@ -6,4 +6,94 @@
     android:layout_height="match_parent"
     tools:context=".iFirestore">
 
+    <Button
+        android:id="@+id/btn_fs_datos_prueba"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C. Datos"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_fs_order_by"
+        app:layout_constraintStart_toStartOf="@+id/btn_fs_ind_comp"
+        app:layout_constraintTop_toTopOf="@+id/btn_fs_order_by" />
+
+    <Button
+        android:id="@+id/btn_fs_order_by"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Order By"
+        app:layout_constraintStart_toEndOf="@+id/btn_fs_datos_prueba"
+        tools:layout_editor_absoluteY="30dp" />
+
+    <Button
+        android:id="@+id/btn_fs_odoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:text="O. Doc"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_fs_order_by"
+        app:layout_constraintStart_toEndOf="@+id/btn_fs_order_by"
+        app:layout_constraintTop_toTopOf="@+id/btn_fs_order_by"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btn_fs_ind_comp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="In. Comp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_fs_datos_prueba"
+        tools:layout_editor_absoluteX="38dp" />
+
+    <Button
+        android:id="@+id/btn_crear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:text="Crear"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_fs_ind_comp"
+        app:layout_constraintStart_toEndOf="@+id/btn_fs_ind_comp"
+        app:layout_constraintTop_toTopOf="@+id/btn_fs_ind_comp"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btn_fs_eliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Eliminar"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_crear"
+        app:layout_constraintStart_toEndOf="@+id/btn_crear"
+        app:layout_constraintTop_toTopOf="@+id/btn_crear"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btn_fs_epaginar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="E. Paginar"
+        app:layout_constraintEnd_toEndOf="@+id/btn_fs_datos_prueba"
+        app:layout_constraintStart_toStartOf="@+id/btn_fs_ind_comp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_fs_ind_comp" />
+
+    <Button
+        android:id="@+id/btn_fs_paginar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Paginar"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_fs_epaginar"
+        app:layout_constraintStart_toEndOf="@+id/btn_fs_epaginar"
+        app:layout_constraintTop_toTopOf="@+id/btn_fs_epaginar" />
+
+    <ListView
+        android:id="@+id/lv_firestore"
+        android:layout_width="255dp"
+        android:layout_height="273dp"
+        android:layout_marginTop="320dp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_fs_odoc"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="@+id/btn_fs_datos_prueba"
+        app:layout_constraintTop_toBottomOf="@+id/btn_fs_order_by" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
