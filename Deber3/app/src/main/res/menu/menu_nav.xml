@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/qr_img"
+        android:title="QR" />
+    <item
+        android:id="@+id/navigation_featured"
+        android:icon="@drawable/recarga_img"
+        android:title="Recargar" />
+    <item
+        android:id="@+id/navigation_shared"
+        android:icon="@drawable/viaje_img"
+        android:title="Mis viajes" />
+    <item
+        android:id="@+id/navigation_files"
+        android:icon="@drawable/perfil_img"
+        android:title="Perfil" />
+</menu>
