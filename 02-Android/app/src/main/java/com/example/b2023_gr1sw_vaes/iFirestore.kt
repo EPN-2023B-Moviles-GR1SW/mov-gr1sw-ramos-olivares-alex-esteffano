@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
+import androidx.lifecycle.findViewTreeViewModelStoreOwner
 import com.google.android.gms.tasks.Task
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.QueryDocumentSnapshot
@@ -29,16 +30,49 @@ class iFirestore : AppCompatActivity() {
             android.R.layout.simple_list_item_1,
             arreglo
         )
-        listView.adapter=adaptador
+        listView.adapter = adaptador
         adaptador.notifyDataSetChanged()
         //Botones
         //Crear datos prueba
-        val botonDatosPrueba=findViewById<Button>(R.id.btn_fs_datos_prueba)
+        val botonDatosPrueba = findViewById<Button>(R.id.btn_fs_datos_prueba)
         botonDatosPrueba.setOnClickListener { crearDatosPrueba() }
         //Order by
-        val botonOrderBy=findViewById<Button>(R.id.btn_fs_order_by)
+        val botonOrderBy = findViewById<Button>(R.id.btn_fs_order_by)
         botonOrderBy.setOnClickListener { consultarConOrderBy(adaptador) }
     }
+    val botonFirebaseEliminar=findViewById<Button>(
+        R.id.btn_fs_eliminar)
+    botonFirebaseEliminar.setOnClickListener{
+        eliminarRegistro()
+    }
+    fun eliminarRegistro(){
+        val db=Firebase.firestore
+        val referenciaEjemploEstudiante=db
+            .collection("ejemplo")
+        referenciaEjemploEstudiante
+            .document("123456798")
+            .delete()
+            .addOnCompleteListener {  }
+            .addOnFailureListener {  }
+    }
+
+    fun consultarCiudades(
+        adaptador:ArrayAdapter<iCities>
+    ){
+    }
+
+    fun guardarQuery(
+        documentSnapshots: QuerySnapshot,
+        refCities: Query
+    ){
+        if(documentSnapshots.size()>0){
+            val ultimoDocumento=documentSnapshots
+                .documents[documentSnapshots.size()-1]
+            query=refCities
+                .startAfter(ultimoDocumento)
+    }
+
+        val botonFirebaseEmpezarPaginar=findViewById
     fun limpiarArreglo(){
         arreglo.clear()
     }
@@ -57,7 +91,80 @@ class iFirestore : AppCompatActivity() {
         )
         arreglo.add(nuevaCiudad)
     }
-    fun consultarConOrderBy(
+
+    //Obtener documento
+    val botonObtenerDocumento=findViewById<Button>(R.id.btn)
+    botonObtenerDocumento.setOnClickListener{
+        consultarDocumento(adaptador)
+    }
+
+    //consultar indice compuesto
+    val botonIndiceCompuesto=findViewById<Button>(R.id.btn_fs_ind_comp)
+    botonIndiceCompuesto.setOnClickListener{
+        consultarIndiceCompuesto(adaptador)
+    }
+
+    val botonCrear=findViewById<Button>(
+        R.id.btn_fs_crear)
+    botonCrear.setOnClickListener { crearEjemplo() }
+}
+
+
+)
+fun crearEjemplo(){
+    val db=Firebase.firestore
+    val referenciasEjemploEstudiante=db
+        .collection("ejemplo")
+    val datosEstudiantes=hashMapOf(
+        "nombre" to "Alex",
+        "graduado" to false,
+        "promedio" to 14.00,
+        "direccion" to hashMapOf(
+            "direccion" to "Mitad del mundo",
+            "numeroCalle" to 1234
+        ),
+        "materias" to listOf("web","moviles")
+    )
+    //crear/actualizar
+    referenciasEjemploEstudiante
+        .document("123456789")
+        .set(datosEstudiantes)
+        .addOnSuccessListener {  }
+        .addOnFailureListener {  }
+//identificador con date
+    val identificador=Date().time
+    referenciasEjemploEstudiante
+        .document(identificador.toString())
+        .set(datosEstudiantes)
+        .addOnSuccessListener {  }
+        .addOnFailureListener {  }
+    //sin identificador
+    referenciasEjemploEstudiante
+        .add(datosEstudiantes)
+        .addOnCompleteListener {  }
+        .addOnFailureListener {  }
+
+
+    fun consultarIndiceCompuesto(
+        adaptador:ArrayAdapter<iCities>){
+        val db=Firebase.firestore
+        val citiesRefUnico=db.collection("cities")
+        limpiarArreglo()
+        adaptador.notifyDataSetChanged()
+        citiesRefUnico
+            .whereEqualTo("capital",false)
+            .whereLessThanOrEqualTo("population",4000000)
+            .orderBy("population",Query.Direction.DESCENDING)
+            .get()
+            .addOnSuccessListener {
+                anadirAArregloCiudad(ciudad)
+            }
+        adaptador.notifyDataSetChanged()
+    }
+    .addOnFailureListener{ }
+}
+
+fun consultarConOrderBy(
         adaptador:ArrayAdapter<iCities>
     ){
         val db=Firebase.firestore
@@ -113,7 +220,6 @@ class iFirestore : AppCompatActivity() {
             }
     }
 
-
     fun crearDatosPrueba(){
         val db=Firebase.firestore
        //Ejm Web
@@ -164,4 +270,5 @@ class iFirestore : AppCompatActivity() {
         )
         cities.document("BJ").set(data5)
     }
+
 }
