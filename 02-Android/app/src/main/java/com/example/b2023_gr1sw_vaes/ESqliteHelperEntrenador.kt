@@ -85,21 +85,6 @@ class ESqliteHelperEntrenador(
         return if(resultadoActualizacion == -1) false else true
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     fun consultarEntrenadorPorID(id: Int): BEntrenador{
         val baseDatosLectura = readableDatabase
         val scriptConsultaLectura = """

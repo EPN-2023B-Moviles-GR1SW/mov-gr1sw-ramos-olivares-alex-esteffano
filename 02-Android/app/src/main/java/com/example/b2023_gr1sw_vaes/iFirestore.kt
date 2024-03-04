@@ -42,9 +42,7 @@ class iFirestore : AppCompatActivity() {
     }
     val botonFirebaseEliminar=findViewById<Button>(
         R.id.btn_fs_eliminar)
-    botonFirebaseEliminar.setOnClickListener{
-        eliminarRegistro()
-    }
+
     fun eliminarRegistro(){
         val db=Firebase.firestore
         val referenciaEjemploEstudiante=db
@@ -72,7 +70,7 @@ class iFirestore : AppCompatActivity() {
                 .startAfter(ultimoDocumento)
     }
 
-        val botonFirebaseEmpezarPaginar=findViewById
+
     fun limpiarArreglo(){
         arreglo.clear()
     }
@@ -93,7 +91,7 @@ class iFirestore : AppCompatActivity() {
     }
 
     //Obtener documento
-    val botonObtenerDocumento=findViewById<Button>(R.id.btn)
+  /*  val botonObtenerDocumento=findViewById<Button>(R.id.btn)
     botonObtenerDocumento.setOnClickListener{
         consultarDocumento(adaptador)
     }
@@ -101,16 +99,12 @@ class iFirestore : AppCompatActivity() {
     //consultar indice compuesto
     val botonIndiceCompuesto=findViewById<Button>(R.id.btn_fs_ind_comp)
     botonIndiceCompuesto.setOnClickListener{
-        consultarIndiceCompuesto(adaptador)
+        consultarIndiceCompuesto(adaptador)*/
     }
 
     val botonCrear=findViewById<Button>(
         R.id.btn_fs_crear)
-    botonCrear.setOnClickListener { crearEjemplo() }
-}
 
-
-)
 fun crearEjemplo(){
     val db=Firebase.firestore
     val referenciasEjemploEstudiante=db
@@ -149,7 +143,7 @@ fun crearEjemplo(){
         adaptador:ArrayAdapter<iCities>){
         val db=Firebase.firestore
         val citiesRefUnico=db.collection("cities")
-        limpiarArreglo()
+       // limpiarArreglo()
         adaptador.notifyDataSetChanged()
         citiesRefUnico
             .whereEqualTo("capital",false)
@@ -157,11 +151,11 @@ fun crearEjemplo(){
             .orderBy("population",Query.Direction.DESCENDING)
             .get()
             .addOnSuccessListener {
-                anadirAArregloCiudad(ciudad)
+              //  anadirAArregloCiudad(ciudad)
             }
         adaptador.notifyDataSetChanged()
     }
-    .addOnFailureListener{ }
+    //.addOnFailureListener{ }
 }
 
 fun consultarConOrderBy(
@@ -169,7 +163,7 @@ fun consultarConOrderBy(
     ){
         val db=Firebase.firestore
         val citiesRefUnico=db.collection("cities")
-        limpiarArreglo()
+       // limpiarArreglo()
         adaptador.notifyDataSetChanged()
         citiesRefUnico
             .orderBy("population",Query.Direction.ASCENDING)
@@ -177,7 +171,7 @@ fun consultarConOrderBy(
             .addOnSuccessListener {
                 for (ciudad in it){
                     ciudad.id
-                    anadirAArregloCiudad(ciudad)
+                  //  anadirAArregloCiudad(ciudad)
                 }
                 adaptador.notifyDataSetChanged()
             }
@@ -196,7 +190,7 @@ fun consultarConOrderBy(
     ){
         val db=Firebase.firestore
         val citiesRefUnico=db.collection("cities")
-        limpiarArreglo()
+       // limpiarArreglo()
         adaptador.notifyDataSetChanged()
         citiesRefUnico
             .document("BJ")
