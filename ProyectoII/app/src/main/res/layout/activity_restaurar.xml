@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/imageView11"
         android:layout_width="409dp"
         android:layout_height="732dp"
         android:src="@drawable/fondo"
@@ -22,31 +22,32 @@
         android:textColor="#E91E63"
         android:textSize="50sp"
         tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="70dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="217dp"
-        android:layout_height="44dp"
-        android:text="Las series y películas más baratas al alcance de tus manos"
-        tools:layout_editor_absoluteX="97dp"
-        tools:layout_editor_absoluteY="395dp" />
+        tools:layout_editor_absoluteY="107dp" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#E91E63"
-        android:text="Comenzar"
-        tools:layout_editor_absoluteX="156dp"
-        tools:layout_editor_absoluteY="521dp" />
+        android:text="ENVIAR"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="420dp" />
 
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="83dp"
-        android:layout_height="99dp"
-        android:src="@drawable/calavera"
-        tools:layout_editor_absoluteX="164dp"
-        tools:layout_editor_absoluteY="161dp" />
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="250dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingrese el correo registrado"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="228dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

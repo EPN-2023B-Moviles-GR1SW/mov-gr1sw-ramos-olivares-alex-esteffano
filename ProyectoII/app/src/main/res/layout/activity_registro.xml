@@ -7,6 +7,13 @@
     android:layout_height="match_parent">
 
 
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="409dp"
+        android:layout_height="732dp"
+        android:src="@drawable/fondo"
+        tools:layout_editor_absoluteX="4dp" />
+
     <EditText
         android:id="@+id/editTextTextPassword3"
         android:layout_width="wrap_content"
@@ -52,6 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PirataCity"
+        android:textColor="#E91E63"
         android:textSize="50sp"
         tools:layout_editor_absoluteX="98dp"
         tools:layout_editor_absoluteY="107dp" />
@@ -60,9 +68,10 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#E91E63"
         android:text="Registrarse"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="607dp" />
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="601dp" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
